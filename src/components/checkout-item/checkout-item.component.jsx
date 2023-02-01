@@ -24,12 +24,12 @@ const CheckoutItem = ({ cartItem }) => {
         <div className='arrow' onClick={removeItemHandler}>
           &#10094;
         </div>
-        <span className='value'>{quantity}</span>
+        <span className='value'>{quantity} X ₹{price}</span>
         <div className='arrow' onClick={addItemHandler}>
           &#10095;
         </div>
       </span>
-      <span className='price'> {price}</span>
+      <span className='price'> ₹{price*quantity}</span>
       <div className='remove-button' onClick={clearItemHandler}>
         &#10005;
       </div>
