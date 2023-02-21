@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-
+import React from 'react';
 import { CartContext } from '../../contexts/cart.context';
 
 import Button, { BUTTON_TYPE_CLASSES } from '../button/button.component';
@@ -9,13 +9,19 @@ import {
   Footer,
   Name,
   Price,
+  AlertInner,
 } from './product-card.styles';
 
 const ProductCard = ({ product }) => {
+  const [ isAlertVisible, setIsAlertVisible ] = React.useState(false);
   const { name, price, imageUrl } = product;
   const { addItemToCart } = useContext(CartContext);
+  const addProductToCart = () => {addItemToCart(product);
+    setIsAlertVisible(true);
+        setTimeout(() => {
+  setIsAlertVisible(false); }, 500);}
 
-  const addProductToCart = () => addItemToCart(product);
+ 
 
   return (
     <ProductCartContainer>
@@ -30,6 +36,11 @@ const ProductCard = ({ product }) => {
       >
         Add to cart
       </Button>
+      {isAlertVisible && <div className='alert-container'>
+               <AlertInner>ADDED TO CART!</AlertInner>
+           </div>   
+        }
+      
     </ProductCartContainer>
   );
 };

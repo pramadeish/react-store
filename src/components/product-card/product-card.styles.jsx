@@ -47,3 +47,16 @@ export const Name = styled.span`
 export const Price = styled.span`
   width: 15%;
 `;
+
+
+export const AlertInner = styled.div`
+display: inline-block;
+  padding: 2px 5px;
+  z-index: 1;
+  background-color: #9FE2BF;
+  font-weight: bold;
+  box-shadow: 100px 2px 10px -3px rgb(0 0 0 / 70%);
+  -webkit-box-shadow: 1px 2px 10px -3px rgb(0 0 0 / 70%);
+  -moz-box-shadow: 1px 2px 10px -3px rgb(0 0 0 / 70%);
+
+`;
